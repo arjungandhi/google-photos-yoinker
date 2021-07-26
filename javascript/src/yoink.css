@@ -1,0 +1,18 @@
+@import url("https://unpkg.com/swiper/swiper-bundle.min.css");
+
+.photo-grid {
+    width: 100%;
+}
+
+.blur {
+    filter: blur(5px)
+}
+
+.media-object {
+    position: absolute;
+}
+
+.media-object > *{
+    width: 100%;
+    background-color: #D8DEE9;
+}
