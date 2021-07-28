@@ -4,18 +4,23 @@ import MediaCarousel from './media-carousel.js'
 
 
 
-export default async function embed_google_media(sharable_id, id ,  type='grid' , html_function = _get_google_photos_html , height = 240, ){
+export default async function embed_google_media(sharable_id, id ,  type='grid' , proxy_function = _make_request , height = 240, ){
  
     const album_url = `https://photos.app.goo.gl/${sharable_id.trim()}`
 
-    let html =await html_function(album_url)
+    
+    let response =await proxy_function(album_url)
+    
+    var json = await response.json() // get html  
+    var html = json.body
+   
 
 
     let container = document.getElementById(id)
     var re = /src="(.{0,1000})=w/g;
     
     var urls = Array.from(html.matchAll(re)).map(match => match[1]) //find all links in the html that matter get the group we found
-    var media = await Promise.all(urls.map(url => _url_to_media_item(url))) // make array by mapping urls using the url to media item function
+    var media = await Promise.all(urls.map(url => _url_to_media_item(url,proxy_function))) // make array by mapping urls using the url to media item function
     
     if (type=='grid'){
         return _elements_to_grid(media, container, height)
@@ -24,14 +29,12 @@ export default async function embed_google_media(sharable_id, id ,  type='grid' 
     }
 }   
 
-async function  _url_to_media_item(url){
+async function  _url_to_media_item(url,proxy_function){
     let media_item = {}
     media_item.base_url = url
     
     // try seeing if this media item is a video 
-    let response = await fetch(`${url}=dv`, {
-        method: 'HEAD'
-    } )
+    let response = await proxy_function(`${url}=dv`)
     if (response.redirected){ // if this is a success then the object is a video / moving picture if it fails then it is not
         media_item.type = 'video'
     } else { //media is a image
@@ -62,13 +65,10 @@ function _element_to_carousel(media,container) {
 }
 
 
-async function _get_google_photos_html(url){
+async function _make_request(url){
     const proxy_url = 'https://api.arjungandhi.com/proxy?url='
 
     var response = await fetch(`${proxy_url}${encodeURIComponent(url)}`) // get request the album page
 
-    var json = await response.json() // get html  
-    var html = json.body
-
-    return html
+    return response 
 }
