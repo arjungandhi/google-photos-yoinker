@@ -1,6 +1,6 @@
 
 export default function MediaGrid(container, media, max_height) {
-    var space_between_media = 8;
+    var space_between_media = 4;
 
     let media_objects = media.map(item => new MediaObject(item));
     media_objects.forEach(element => _add_object_to_container(element));

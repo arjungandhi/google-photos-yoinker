@@ -1,8 +1,8 @@
 {
   "name": "google-photos-yoinker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "yoink.js",
+  "main": "src/yoink.js",
   "scripts": {
   },
   "type": "module",
