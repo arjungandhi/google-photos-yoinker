@@ -127,7 +127,9 @@ class MediaObject{
 
 
     _update_position(x,y,height) {
-        this.dom_object.style = `width:${this.aspect_ratio*height}px;height:${height}px;transform:translate(${x}px,${y}px)`
+        
+
+        this.dom_object.style = `width:${parseInt(this.aspect_ratio*height)}px;height:${parseInt(height)}px;transform:translate(${parseInt(x)}px,${parseInt(y)}px)`
     }
 
     _get_src_url(size=null,poster=false){

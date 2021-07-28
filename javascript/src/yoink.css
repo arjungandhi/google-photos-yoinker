@@ -4,6 +4,11 @@
     width: 100%;
 }
 
+.photo-carousel {
+    width: 70%;
+}
+
+
 .blur {
     filter: blur(5px)
 }
@@ -14,5 +19,27 @@
 
 .media-object > *{
     width: 100%;
-    background-color: #D8DEE9;
+    height: 100%;
+}
+
+.swiper-slide {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide > * {
+    display: block;
+    width: auto;
+    height: 100%;
 }
