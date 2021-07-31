@@ -63,6 +63,8 @@ export default function MediaGrid(container, media, max_height) {
             x = 0 
             y = y + row_height + space_between_media
         }
+
+        container.style = `height:${y}px`
         
     }
 
