@@ -26,8 +26,7 @@ export default function MediaCarousel(container, media) {
     let aspect_ratios = media_objects.map(item => item.aspect_ratio)
     let max_aspect_ratio =  Math.max(...aspect_ratios)
 
-    _resize_carousel()
-    window.onresize= () => _resize_carousel();
+    c.style = `width:100%;height:${100/max_aspect_ratio}%`
 
     const swiper = new Swiper('.swiper-container', {
         // If we need pagination
@@ -47,10 +46,6 @@ export default function MediaCarousel(container, media) {
         w.appendChild(object.dom_object)
     }
 
-    function _resize_carousel() {
-        console.log(container.clientWidth)
-        c.style = `width:100%;height:${container.clientWidth/max_aspect_ratio}px`
-    }
 
 }
 
