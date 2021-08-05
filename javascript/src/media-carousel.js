@@ -26,7 +26,7 @@ export default function MediaCarousel(container, media) {
     let aspect_ratios = media_objects.map(item => item.aspect_ratio)
     let max_aspect_ratio =  Math.max(...aspect_ratios)
 
-    c.style = `width:100%;height:${100/max_aspect_ratio}%`
+    c.style = `width:100%;aspect-ratio:${max_aspect_ratio}`
 
     const swiper = new Swiper('.swiper-container', {
         // If we need pagination
