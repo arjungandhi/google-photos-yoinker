@@ -46,6 +46,12 @@ export default function MediaCarousel(container, media) {
         w.appendChild(object.dom_object)
     }
 
+    var observer = new IntersectionObserver(function(entries) {
+        if(entries[0].isIntersecting === true)
+            swiper.update()
+    }, { threshold: [1] });
+
+    observer.observe(c);
 
 }
 
