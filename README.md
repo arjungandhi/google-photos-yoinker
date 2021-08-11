@@ -90,14 +90,14 @@ To use swiper on your own site you'll need to set up an api/lambda/proxy thing t
 ### Using the Library
 1. Add the CSS to your head tag. 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-photos-yoinker@1.0.9/src/yoink.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-photos-yoinker@1.1.0/src/yoink.min.css">
 ```
 
 3. copy the following code into your body
 ```html
 <div id="photos-container"></div>
 <script type="module">
-    import embed_google_photos from "https://cdn.jsdelivr.net/npm/google-photos-yoinker@1.0.9/src/yoink.min.js"
+    import embed_google_photos from "https://cdn.jsdelivr.net/npm/google-photos-yoinker@1.1.0/src/yoink.min.js"
 
     async function make_request(url){
         const proxy_url = '{{$invoke_url}}?url='

@@ -9,7 +9,7 @@ export default async function embed_google_media(sharable_id, id ,  type='grid' 
     const album_url = `https://photos.app.goo.gl/${sharable_id.trim()}`
 
     
-    let response =await proxy_function(album_url)
+    let json =await proxy_function(album_url)
 
     var html = json.body.data
 
@@ -31,8 +31,7 @@ async function  _url_to_media_item(url,proxy_function){
     media_item.base_url = url
     
     // try seeing if this media item is a video 
-    let response = await proxy_function(`${url}=dv`)
-    let json = await response.json()
+    let json = await proxy_function(`${url}=dv`) 
     
     if (json.body.redirected){ // if this is a success then the object is a video / moving picture if it fails then it is not
         media_item.type = 'video'
