@@ -124,7 +124,7 @@ If you wanna do the proxy some other way go for it you as long as its an async f
 ```json
 {
   "body": {
-    "data": "the request data, <- the request data format (in this case its an html string)"
+    "data": "the request data, <- the request data format (in this case its an html string)",
     "redirected": "Bool <- a boolean value based on whether the request was redirected (important for telling between pictures and videos)"
   }
 }
