@@ -10,8 +10,7 @@ export default async function embed_google_media(sharable_id, id ,  type='grid' 
 
     
     let response =await proxy_function(album_url)
-    
-    var json = await response.json() // get html  
+
     var html = json.body.data
 
     let container = document.getElementById(id)
@@ -69,6 +68,8 @@ async function _make_request(url){
     const proxy_url = 'https://api.arjungandhi.com/proxy?url='
 
     var response = await fetch(`${proxy_url}${encodeURIComponent(url)}`) // get request the album page
+        
+    var json = await response.json() // get html  
 
-    return response 
+    return json 
 }
