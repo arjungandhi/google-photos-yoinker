@@ -1,4 +1,4 @@
-import Swiper from 'https://unpkg.com/swiper@6.8.4/swiper-bundle.esm.browser.min.js'
+import Swiper from 'https://unpkg.com/swiper@6.8.1/swiper-bundle.esm.browser.min.js'
 
 
 export default function MediaCarousel(container, media) {
@@ -31,6 +31,7 @@ export default function MediaCarousel(container, media) {
     const swiper = new Swiper('.swiper-container', {
         // If we need pagination
         loop: true,
+        centeredSlides:true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
