@@ -85,6 +85,8 @@ class MediaObject{
             full_content.onerror = (e) => e.target.load()
         }
 
+        setTimeout(function(){ this.content.classList.remove('blur') }, 3000);
+
         this.content.classList.add('blur')
         this.dom_object.appendChild(this.content)
     }
