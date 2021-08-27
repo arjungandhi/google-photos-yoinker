@@ -1,4 +1,4 @@
-import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+import Swiper from 'https://unpkg.com/swiper@6.8.4/swiper-bundle.esm.browser.min.js'
 
 
 export default function MediaCarousel(container, media) {
