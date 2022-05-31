@@ -90,7 +90,7 @@ To use swiper on your own site you'll need to set up an api/lambda/proxy thing t
 ### Using the Library
 1. Add the CSS to your head tag. 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-photos-yoinker@1.1.0/src/yoink.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/google-photos-yoinker@1.1.6/src/yoink.min.css">
 ```
 
 3. copy the following code into your body

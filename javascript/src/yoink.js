@@ -64,8 +64,6 @@ function _element_to_carousel(media,container) {
 
 
 async function _make_request(url){
-    const proxy_url = 'https://api.arjungandhi.com/proxy?url='
-
     var response = await fetch(`${proxy_url}${encodeURIComponent(url)}`) // get request the album page
         
     var json = await response.json() // get html  
